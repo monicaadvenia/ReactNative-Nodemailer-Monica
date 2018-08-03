@@ -111,13 +111,13 @@ var transporter= nodemailer.createTransport({
     }
 })
 
-app.post('/data', (req, res)=>{
+app.get('/data', (req, res)=>{
     console.log(req.body.addressEmail)
 
     var mailOptions= {
         from: 'TesNode JS <wkwk@haha.com>',
         // to: 'monica_advenia@yahoo.com',
-        to: `${req.body.addressEmail}`,
+        to: req.body.addressEmail,
         subject: 'TesEmail Ujian',
         text: 'Halo Dunia!',
         html: '<h1><i>Ini ngetes</i></h1>'}
